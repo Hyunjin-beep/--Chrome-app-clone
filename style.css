@@ -11,6 +11,7 @@
 
   /*Size*/
   --font-size: 30px;
+  --font-size-small: 25px;
   --font-size-large: 40px;
   --font-size-larger: 45px;
   --base-size: 15px;
@@ -26,13 +27,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: var(--font-style);
 }
 
 /* Date and Clock */
 .dateWithClock {
   -webkit-text-stroke: 1px var(--color-white);
   font-size: var(--font-size);
-  font-family: var(--font-style);
   font-weight: bold;
   padding-bottom: var(--font-size);
 }
@@ -53,4 +54,46 @@ body {
 .date:hover,
 .clock:hover {
   transform: scale(1.1);
+}
+
+/* User Name */
+.userName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--base-size);
+  width: 25%;
+}
+
+.userNameInput {
+  background-color: transparent;
+  text-align: center;
+  font-size: calc(var(--font-size) / 2);
+  width: 100%;
+  padding: 10px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  transition: transform var(--animation-duration) ease;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+  color: var(--color-grey);
+  font-size: 20px;
+}
+
+.userNameInput:hover {
+  transform: scale(1.1);
+}
+
+.userNameInput:focus {
+  outline: none;
+}
+
+.userNameValue {
+  -webkit-text-stroke: 1px var(--color-white);
+  font-size: var(--font-size);
+  font-weight: bold;
 }
