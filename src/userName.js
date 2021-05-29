@@ -13,6 +13,7 @@ function handleSubmit(event) {
   const enteredName = userNameInput.value;
   displayUserName(enteredName);
   saveUserName(enteredName);
+  window.location.reload();
 }
 
 function askUserName() {
