@@ -22,6 +22,57 @@
   --animation-duration: 300ms;
 }
 
+/* Toggle Menu */
+.toggleMenu {
+  position: fixed;
+  right: 0px;
+  width: 0px;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background-color: var(--color-more-white);
+  font-size: var(--font-size-small);
+  color: var(--color-grey);
+  font-weight: bold;
+
+  transition: 0.8s ease;
+}
+
+.menu-item {
+  padding: 10px;
+}
+
+.menu-items {
+  list-style: none;
+  line-height: 50px;
+}
+
+.menu-item a {
+  text-decoration-line: none;
+}
+
+.menu-item a:link,
+.menu-item a:visited {
+  color: var(--color-grey);
+}
+
+.menu-item a:hover {
+  color: var(--color-black);
+}
+
+.menu-item:hover {
+  color: var(--color-more-grey);
+  cursor: pointer;
+}
+
+.toggleBtn {
+  color: var(--color-grey);
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
 body {
   display: flex;
   flex-direction: row;
@@ -32,7 +83,7 @@ body {
   font-family: var(--font-style);
 }
 
-.toDoListForm {
+.toDoListSheet {
   border: 1px solid black;
 }
 

@@ -10,16 +10,35 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="src/main.js"></script>
-    <script defer src="src/userName.js"></script>
+    <!-- <script defer src="src/userName.js"></script> -->
+    <script defer src="src/toDoList.js"></script>
     <title>My Plan</title>
   </head>
   <body>
-    <!-- To Do List -->
-    <div class="toDoListForm">
-      <h4>What is your plan today?</h4>
-      <ul class="toDoList">
-        <li class="toDoList-item">JS</li>
+    <!-- Toggle Menu -->
+    <div class="toggleMenu">
+      <a href="#" class="toggleBtn">
+        <i class="fas fa-bars"></i>
+      </a>
+      <ul class="menu-items">
+        <li class="menu-item home"><a href="index.html">HOME</a></li>
+        <li class="menu-item myPlan"><a href="toDolist.html">My Plan</a></li>
+        <li class="menu-item Pomodoro"><a href="#">Pomodoro</a></li>
       </ul>
+    </div>
+
+    <!-- To Do List -->
+    <div class="toDoListSheet">
+      <h4>What is your plan today?</h4>
+      <ul class="toDoList-ul">
+        <!-- <li class="toDoList-li">
+          <input type="checkbox" class="checkbox" />sj
+        </li> -->
+      </ul>
+
+      <form class="toDoListForm">
+        <input type="text" placeholder="Add a plan" class="inputForToDo" />
+      </form>
     </div>
 
     <!-- 24 Tracking Sheet -->
