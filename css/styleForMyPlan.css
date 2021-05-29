@@ -7,13 +7,15 @@
   --color-more-grey: #474747;
   --color-grey: #8f8e8e;
   --color-light-grey: #dfdfdf;
+  --color-light-pink: #e2d7d7;
 
   /*font*/
   --font-style: Courier;
 
   /*Size*/
   --font-size: 30px;
-  --font-size-small: 20px;
+  --font-size-small: 15px;
+  --font-size-normal: 20px;
   --font-size-large: 40px;
   --font-size-larger: 45px;
   --base-size: 15px;
@@ -85,8 +87,109 @@ body {
 
 .toDoListSheet {
   border: 1px solid black;
+  height: 60vh;
+  width: 45%;
+  margin: 0px var(--base-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 15px;
+  border-style: none;
+  background-color: #cac2c1ce;
+  transition: transform var(--animation-duration) ease;
+}
+
+.toDoListSheet:hover {
+  transform: scale(1.05);
+}
+.toDoListSheet .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--base-size);
+  color: var(--color-black);
+  font-size: var(--font-size);
+  font-weight: bold;
+}
+
+.toDoListSheet .date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--base-size);
+  font-size: var(--font-size-small);
+  color: var(--color-black);
+  font-weight: bold;
+}
+
+.toDoListSheet .toDoList-ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-size: var(--font-size-normal);
+  padding-left: 5px;
+}
+
+.toDoListSheet .toDoList-li {
+  border-bottom: 1px solid var(--color-black);
+  margin: 5px var(--base-size);
+}
+
+.toDoListSheet .span-toDoItem {
+  padding: 0 var(--base-size);
+}
+
+.toDoListSheet .deleteBtn {
+  float: right;
+  margin-right: var(--base-size);
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.toDoListSheet .toDoListForm {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  position: relative;
+}
+
+.toDoListSheet .inputForToDo {
+  width: 95%;
+  height: 15%;
+  position: absolute;
+  bottom: 10px;
+  border-style: none;
+  font-size: var(--font-size-normal);
+  background-color: var(--color-light-pink);
+  border-radius: 10px;
+}
+
+.toDoListSheet .inputForToDo::placeholder {
+  padding-left: 10px;
+  color: var(--color-light-grey);
+}
+
+.toDoListSheet .inputForToDo:focus {
+  outline: none;
 }
 
 .trackingSheetForm {
   border: 1px solid black;
+  height: 60vh;
+  width: 45%;
+  margin: 0px var(--base-size);
+
+  border-radius: 15px;
+  border-style: none;
+  background-color: #cac2c1ce;
+  transition: transform var(--animation-duration) ease;
+}
+
+.trackingSheetForm:hover {
+  transform: scale(1.05);
 }

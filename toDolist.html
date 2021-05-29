@@ -27,9 +27,12 @@
       </ul>
     </div>
 
+    <!-- Date and Clock -->
+
     <!-- To Do List -->
     <div class="toDoListSheet">
-      <h4>What is your plan today?</h4>
+      <span class="title">What is your plan today?</span>
+      <span class="date"></span>
       <ul class="toDoList-ul">
         <!-- <li class="toDoList-li">
           <input type="checkbox" class="checkbox" />sj
@@ -64,4 +67,25 @@
       </ul>
     </div>
   </body>
+
+  <script>
+    const date = document.querySelector(".date");
+
+    function loadDate() {
+      const today = new Date();
+      const yrs = today.getFullYear();
+      const month = today.toLocaleString("default", { month: "short" });
+      const day = today.getDate();
+      const weekend = today.toLocaleString("default", { weekday: "short" });
+      date.innerHTML = `${month < 10 ? `0${month}` : month} ${
+        day < 10 ? `0${day}` : day
+      }, ${yrs} ${weekend}`;
+    }
+
+    function init() {
+      loadDate();
+    }
+
+    init();
+  </script>
 </html>
