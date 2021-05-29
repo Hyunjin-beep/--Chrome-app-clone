@@ -1,0 +1,192 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #345d7c;
+  --color-more-white: #d8d8d891;
+  --color-more-grey: #474747;
+  --color-grey: #8f8e8e;
+  --color-light-grey: #dfdfdf;
+
+  /*font*/
+  --font-style: Courier;
+
+  /*Size*/
+  --font-size: 30px;
+  --font-size-small: 20px;
+  --font-size-large: 40px;
+  --font-size-larger: 45px;
+  --base-size: 15px;
+
+  /*animation*/
+  --animation-duration: 300ms;
+}
+
+body {
+  background-color: var(--color-light-grey);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-style);
+}
+
+/* Date and Clock */
+.dateWithClock {
+  -webkit-text-stroke: 1px var(--color-white);
+  font-size: var(--font-size);
+  font-weight: bold;
+  margin: var(--font-size) 0;
+}
+
+.dateWithClock .date {
+  font-size: var(--font-size-large);
+  display: inline-block;
+  transition: transform var(--animation-duration) ease;
+}
+
+.dateWithClock .clock {
+  position: relative;
+  left: 30%;
+  display: inline-block;
+  transition: transform var(--animation-duration) ease;
+}
+
+.date:hover,
+.clock:hover {
+  transform: scale(1.1);
+}
+
+/* User Name */
+.userName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: var(--base-size);
+  width: 25%;
+}
+
+.userNameInput {
+  background-color: transparent;
+  text-align: center;
+  font-size: calc(var(--font-size) / 2);
+  width: 100%;
+  padding: 10px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  transition: transform var(--animation-duration) ease;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+  color: var(--color-grey);
+  font-size: 20px;
+}
+
+.userNameInput:hover {
+  transform: scale(1.1);
+}
+
+.userNameInput:focus {
+  outline: none;
+}
+
+.userNameValue {
+  -webkit-text-stroke: 1px var(--color-white);
+  font-size: var(--font-size);
+  font-weight: bold;
+}
+
+/* weather */
+.weather {
+  width: 25%;
+  color: var(--color-grey);
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  margin: var(--font-size) 0;
+}
+
+.weather-infor {
+  padding-left: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 20px 0;
+}
+
+.weather-infor .tem {
+  flex: 1 1 auto;
+}
+
+.weather-infor .humidity {
+  flex: 1 1 auto;
+}
+
+.weather-infor .clouds {
+  flex: 1 1 auto;
+}
+
+.weather-infor-detail {
+  padding: 0px 20px;
+}
+
+.other-infor {
+  margin: var(--base-size) 0;
+}
+
+/* Toggle Menu */
+.toggleMenu {
+  position: fixed;
+  right: 0px;
+  width: 0px;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background-color: var(--color-more-white);
+  font-size: var(--font-size-small);
+  color: var(--color-grey);
+  font-weight: bold;
+
+  transition: 0.8s ease;
+}
+
+.menu-item {
+  padding: 10px;
+}
+
+.menu-items {
+  list-style: none;
+  line-height: 50px;
+}
+
+.menu-item a {
+  text-decoration-line: none;
+}
+
+.menu-item a:link,
+.menu-item a:visited {
+  color: var(--color-grey);
+}
+
+.menu-item a:hover {
+  color: var(--color-black);
+}
+
+.menu-item:hover {
+  color: var(--color-more-grey);
+  cursor: pointer;
+}
+
+.toggleBtn {
+  color: var(--color-grey);
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
