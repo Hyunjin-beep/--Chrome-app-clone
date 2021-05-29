@@ -3,6 +3,8 @@
   --color-black: #3f454d;
   --color-white: #ffffff;
   --color-blue: #345d7c;
+  --color-more-white: #d8d8d891;
+  --color-more-grey: #474747;
   --color-grey: #8f8e8e;
   --color-light-grey: #dfdfdf;
 
@@ -138,8 +140,40 @@ body {
   margin: var(--base-size) 0;
 }
 
-.other-infor .at {
+/* Toggle Menu */
+.toggleMenu {
+  position: fixed;
+  right: 0px;
+  width: 0px;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background-color: var(--color-more-white);
+  font-size: var(--font-size-small);
+  color: var(--color-grey);
+  font-weight: bold;
+
+  transition: 0.8s ease;
 }
 
-.city {
+.menu-items {
+  list-style: none;
+  line-height: 50px;
+}
+
+.menu-item {
+  padding: 10px;
+}
+
+.menu-item:hover {
+  color: var(--color-more-grey);
+  cursor: pointer;
+}
+
+.toggleBtn {
+  color: var(--color-grey);
+  position: fixed;
+  top: 10px;
+  right: 10px;
 }
