@@ -103,6 +103,7 @@ body {
 .toDoListSheet:hover {
   transform: scale(1.05);
 }
+
 .toDoListSheet .title {
   display: flex;
   justify-content: center;
@@ -178,6 +179,7 @@ body {
   outline: none;
 }
 
+/* Tracking Sheet */
 .trackingSheetForm {
   border: 1px solid black;
   height: 60vh;
@@ -192,4 +194,52 @@ body {
 
 .trackingSheetForm:hover {
   transform: scale(1.05);
+}
+
+.trackingSheetForm .tracking-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--base-size);
+  color: var(--color-black);
+  font-size: var(--font-size);
+  font-weight: bold;
+}
+
+.trackingSheetForm .trackingSheet-ul {
+  list-style: none;
+  font-size: var(--font-size-small);
+  padding: 0px;
+}
+
+.trackingSheetForm .trackingSheet-ul .hr {
+  font-size: var(--font-size-normal);
+  display: flex;
+  flex-direction: row;
+
+  padding-left: var(--base-size);
+}
+
+.trackingSheetForm .trackingSheet-ul .trackingForm {
+  margin-left: var(--base-size);
+  width: 100%;
+}
+
+.trackingSheetForm .trackingSheet-ul .trackingForm .inputForTracking {
+  width: 95%;
+  border-style: none;
+  font-size: var(--font-size-small);
+  background-color: var(--color-light-pink);
+  border-radius: 10px;
+}
+
+.trackingSheetForm
+  .trackingSheet-ul
+  .trackingForm
+  .inputForTracking::placeholder {
+  align-items: center;
+}
+
+.trackingSheetForm .trackingSheet-ul .trackingForm .inputForTracking:focus {
+  outline: none;
 }
