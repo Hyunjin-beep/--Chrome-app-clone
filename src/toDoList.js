@@ -1,9 +1,45 @@
 const toDoList_ls = "ToDo-items";
 let toDoArray = [];
+const complete_ls = "Complete-color";
+let completeArray = [];
+const colorArray = ["#ece2e1", "initial"];
 
 const toDoForm = document.querySelector(".toDoListForm");
 const enteredToDo = document.querySelector(".inputForToDo");
 const toDoUl = document.querySelector(".toDoList-ul");
+
+function handleCompleteClick(event) {
+  const comBtn = event.target;
+  const comBtnLi = comBtn.parentElement;
+  const comBtnLiID = comBtnLi.id;
+  const comBtnCheck = comBtn.checked;
+
+  handleChecked(comBtnLiID, comBtnCheck);
+}
+
+function handleChecked(comBtnLiID, comBtnCheck) {
+  //First, paint grey of selected li
+  const parsedId = parseInt(comBtnLiID);
+  const comli = document.getElementById(`${parsedId}`);
+  const comCheck = document.querySelector(`#compelte${parsedId}`);
+
+  if (comBtnCheck === true) {
+    comli.style.setProperty("text-decoration", "line-through");
+    comCheck.checked = comBtnCheck;
+  } else {
+    comli.style.setProperty("text-decoration", "none");
+    comCheck.checked = comBtnCheck;
+  }
+
+  // Second, store the grey infor in local storage
+  const completeObs = {
+    comBtnLiID,
+    comBtnChecked: comBtnCheck,
+  };
+
+  completeArray.push(completeObs);
+  localStorage.setItem(complete_ls, JSON.stringify(completeArray));
+}
 
 function handleDeleteClick(event) {
   console.log(event.target);
@@ -46,7 +82,8 @@ function displayToDoList(enteredToDoItems) {
   const compelteBtn = document.createElement("input");
   compelteBtn.setAttribute("type", "checkbox");
   compelteBtn.classList.add("compelteBtn");
-  compelteBtn.id = toDoArray.length + 1;
+  compelteBtn.id = `compelte${toDoArray.length + 1}`;
+  compelteBtn.addEventListener("change", handleCompleteClick);
 
   // Third, span
   const span = document.createElement("span");
@@ -79,6 +116,14 @@ function loadToDoList() {
     const parsedToDoItems = JSON.parse(loadedtoDoItems);
     parsedToDoItems.forEach((toDoItem) => {
       displayToDoList(toDoItem.item);
+    });
+  }
+
+  const loadedChecked = localStorage.getItem(complete_ls);
+  if (loadedChecked !== null) {
+    const parsedChecked = JSON.parse(loadedChecked);
+    parsedChecked.forEach((checks) => {
+      handleChecked(checks.comBtnLiID, checks.comBtnChecked);
     });
   }
 }

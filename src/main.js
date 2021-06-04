@@ -15,3 +15,7 @@ function handleToggleBtnOver() {
 function handleToggleBtnOut() {
   toggleMenu.style.width = "0px";
 }
+
+// // Complete CheckBox
+// const comChk = document.querySelector(".compelteBtn");
+// console.dir(comChk);
