@@ -25,11 +25,10 @@ function handleChecked(comBtnLiID, comBtnCheck) {
 
   if (comBtnCheck === true) {
     comli.style.setProperty("text-decoration", "line-through");
-    comCheck.checked = comBtnCheck;
   } else {
     comli.style.setProperty("text-decoration", "none");
-    comCheck.checked = comBtnCheck;
   }
+  comCheck.checked = comBtnCheck;
 
   // Second, store the grey infor in local storage
   const completeObs = {
