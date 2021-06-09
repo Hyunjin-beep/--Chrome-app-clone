@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="src/main.js"></script>
+    <script defer src="src/pomodoro.js"></script>
     <title>Pomodoro</title>
   </head>
   <body>
@@ -27,10 +28,16 @@
 
     <!-- Time & Set -->
     <div class="timeSetOptions">
-      <ul class="timeSet">
-        <li class="20X5"><button class="20X5">20X5</button></li>
-        <li class="25X5"><button class="25X5">25X5</button></li>
-        <li class="50X5"><button class="50X5">50X5</button></li>
+      <ul class="timeSet-ul">
+        <li class="twentyAndFive">
+          <button class="twentyAndFiveBtn limited">20X5</button>
+        </li>
+        <li class="twentyFiveAndFive">
+          <button class="twentyFiveAndFiveBtn limited">25X5</button>
+        </li>
+        <li class="fiftyAndFive">
+          <button class="fiftyAndFiveBtn limited">50X5</button>
+        </li>
         <li class="unlimited"><button class="unlimited">unlimited</button></li>
       </ul>
     </div>
