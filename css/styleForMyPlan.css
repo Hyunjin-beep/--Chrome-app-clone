@@ -200,10 +200,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-items: baseline;
   margin-top: var(--base-size);
   color: var(--color-black);
   font-size: var(--font-size);
   font-weight: bold;
+}
+
+.trackingSheetForm .tracking-title .delteBtnForTracking {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease;
+  color: var(--color-grey);
+}
+
+.trackingSheetForm .tracking-title .delteBtnForTracking:hover {
+  transform: scale(1.05);
+}
+
+.trackingSheetForm .tracking-title .fa-trash-alt {
+  margin-left: var(--font-size-normal);
+  font-size: var(--font-size-normal);
 }
 
 .trackingSheetForm .trackingSheet-ul {

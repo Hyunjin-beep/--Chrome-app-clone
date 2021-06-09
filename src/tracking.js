@@ -3,17 +3,41 @@ let tracking_Array = [];
 
 const trackingSheetForm = document.querySelector(".trackingSheetForm");
 const trackingForms = document.querySelectorAll(".trackingForm");
-const enteredWorks = document.querySelectorAll(".inputForTracking");
 const trackingSheetUl = document.querySelector(".trackingSheet-ul");
+const inputForTracking = document.querySelectorAll(".inputForTracking");
+const deleteBtnForTracking = document.querySelector(".delteBtnForTracking");
 
-function displayTrackList(enteredTask) {
+function handleDeleteAll(event) {
+  console.dir(event);
+  const enteredTaks = document.querySelectorAll(".task");
+  console.log(enteredTaks);
+  // First, remove li from html not in local storage
+  localStorage.removeItem(tracking_ls);
+  location.reload();
+}
+
+function displayTrackList(formClassName, inputClassName, enteredValue) {
+  //   console.log(formClassName, inputClassName, enteredValue); // number(time), number(time), entered task
+  const form = document.getElementsByClassName(
+    `trackingForm${formClassName}`
+  )[0];
+  const input = document.getElementsByClassName(
+    `inputForTracking${inputClassName}`
+  )[0];
+
+  //   console.log(form, input, enteredValue);
+
   const enteredTasksSpan = document.createElement("span");
-  enteredTasksSpan.innerText = enteredTask;
+  enteredTasksSpan.classList.add("task");
+  enteredTasksSpan.innerText = enteredValue;
 
-  form.append(enteredTasksSpan);
+  form.appendChild(enteredTasksSpan);
+  form.removeChild(input);
 
   const taskObj = {
-    enteredTask,
+    formClassName,
+    inputClassName,
+    enteredValue,
     id: tracking_Array.length + 1,
   };
 
@@ -27,36 +51,35 @@ function saveTrackingList(tracking_Array) {
 
 function loadTrackList() {
   const loadedTrackList = localStorage.getItem(tracking_ls);
-  //   if (loadedTrackList !== null) {
-  //     console.log(loadedTrackList);
-  //     const parsedTrackList = JSON.parse(loadedTrackList);
-  //     console.log(parsedTrackList);
-  //     parsedTrackList.forEach(trackList => );
-  //   }
+  if (loadedTrackList !== null) {
+    const parsedTrackList = JSON.parse(loadedTrackList);
+    parsedTrackList.forEach((trackList) =>
+      displayTrackList(
+        trackList.formClassName,
+        trackList.inputClassName,
+        trackList.enteredValue
+      )
+    );
+  }
 }
 
 function handleTest(event) {
   event.preventDefault();
-  //   console.dir(event);
-  //   console.log(event.target);
-  //   console.log(event.target[0]);
+  // Get class name(time) and give them as param to displayTrackList()
   const formClassName = event.target.className.substring(12, 15);
   const inputClassName = event.target[0].className.substring(16, 19);
   const enteredValue = event.target.firstElementChild.value;
 
-  let form = document.getElementsByClassName(`trackingForm ${formClassName}`);
-  let input = document.getElementsByClassName(
-    `inputForTracking ${inputClassName}`
-  );
-
-  displayTrackList(enteredValue);
+  displayTrackList(formClassName, inputClassName, enteredValue);
 }
 
 function init() {
   loadTrackList();
+  // 'trackinForms' are multiple forms, so need forEach
   trackingForms.forEach((trackingForm) => {
     trackingForm.addEventListener("submit", (event) => handleTest(event));
   });
+  deleteBtnForTracking.addEventListener("click", handleDeleteAll);
 }
 
 init();
