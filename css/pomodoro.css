@@ -1,0 +1,86 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #345d7c;
+  --color-more-white: #d8d8d891;
+  --color-more-grey: #474747;
+  --color-grey: #8f8e8e;
+  --color-light-grey: #dfdfdf;
+  --color-light-pink: #e2d7d7;
+
+  /*font*/
+  --font-style: Courier;
+
+  /*Size*/
+  --font-size: 30px;
+  --font-size-small: 15px;
+  --font-size-normal: 20px;
+  --font-size-large: 40px;
+  --font-size-larger: 45px;
+  --base-size: 15px;
+
+  /*animation*/
+  --animation-duration: 300ms;
+}
+
+/* Toggle Menu */
+.toggleMenu {
+  position: fixed;
+  right: 0px;
+  width: 0px;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background-color: var(--color-more-white);
+  font-size: var(--font-size-normal);
+  color: var(--color-grey);
+  font-weight: bold;
+
+  transition: 0.8s ease;
+}
+
+.menu-item {
+  padding: 10px;
+}
+
+.menu-items {
+  list-style: none;
+  line-height: 50px;
+}
+
+.menu-item a {
+  text-decoration-line: none;
+}
+
+.menu-item a:link,
+.menu-item a:visited {
+  color: var(--color-grey);
+}
+
+.menu-item a:hover {
+  color: var(--color-black);
+}
+
+.menu-item:hover {
+  color: var(--color-more-grey);
+  cursor: pointer;
+}
+
+.toggleBtn {
+  color: var(--color-grey);
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--color-light-grey);
+  font-family: var(--font-style);
+}

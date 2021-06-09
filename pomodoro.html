@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/pomodoro.css" />
+    <script
+      src="https://kit.fontawesome.com/df74e34b8e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="src/main.js"></script>
+    <title>Pomodoro</title>
+  </head>
+  <body>
+    <!-- Toggle Menu -->
+    <div class="toggleMenu">
+      <a href="#" class="toggleBtn">
+        <i class="fas fa-bars"></i>
+      </a>
+      <ul class="menu-items">
+        <li class="menu-item home"><a href="index.html">HOME</a></li>
+        <li class="menu-item myPlan"><a href="toDolist.html">My Plan</a></li>
+        <li class="menu-item Pomodoro"><a href="pomodoro.html">Pomodoro</a></li>
+      </ul>
+    </div>
+
+    <!-- Time & Set -->
+    <div class="timeSetOptions">
+      <ul class="timeSet">
+        <li class="20X5"><button class="20X5">20X5</button></li>
+        <li class="25X5"><button class="25X5">25X5</button></li>
+        <li class="50X5"><button class="50X5">50X5</button></li>
+        <li class="unlimited"><button class="unlimited">unlimited</button></li>
+      </ul>
+    </div>
+
+    <!-- Clock for option A -->
+    <div class="optionA">
+      <span class="AsetNumber">1st</span>
+      <span class="Atime">00:00</span>
+    </div>
+
+    <!-- Clock for option B -->
+    <div class="optionB">
+      <span class="Btime">00:00</span>
+      <ul class="optionBBtns">
+        <li class="optionBBtn stop">STOP</li>
+        <li class="optionBBtn done">DONE</li>
+      </ul>
+    </div>
+  </body>
+</html>
