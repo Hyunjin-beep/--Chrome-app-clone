@@ -9,38 +9,60 @@ const twentyFiveAndFiveBtn = document.querySelector(".twentyFiveAndFiveBtn");
 const fiftyAndFiveBtn = document.querySelector(".fiftyAndFiveBtn");
 
 //Option A
-const Atime = document.querySelector(".Atime");
+let Atime = document.querySelector(".Atime");
 
-function updateCountDown() {
-  console.log("time   ");
-  const startingMin = 20;
-  let time = startingMin * 60; // 20분 x 60초
+function updateCountDown(min) {
+  let seconds = 60;
+  setInterval(function () {
+    if (min == 0 && seconds == 1) {
+      Atime.innerHTML = "00:00";
+    } else {
+      seconds--;
+      if (seconds == 0) {
+        min--;
+        seconds = 60;
 
-  const mintues = Math.floor(time / 60);
-  let seconds = mintues % 60;
+        if (min == 0) {
+          min = min;
+        }
+      }
 
-  Atime.innerText = `${mintues < 10 ? `0${mintues}` : mintues}:${
-    seconds < 10 ? `0${seconds}` : seconds
-  }`;
-  time--;
+      Atime.innerHTML = `${min < 10 ? `0${min}` : min}:${
+        seconds < 10 ? `0${seconds}` : seconds
+      }`;
+    }
+  }, 1000);
 }
 
-function handleTwentyAndFive() {
-  setInterval(updateCountDown, 1000);
-}
-
-function handleLimitedBtns(event) {
+function handleLimitedBtns(min) {
   timeAndSet.style.display = "none";
   optionA.style.display = "block";
 
-  twentyAndFiveBtn.addEventListener("click", handleTwentyAndFive);
+  updateCountDown(min);
+}
+
+function handleTwentyAndFive() {
+  const twenty = 19;
+  handleLimitedBtns(twenty);
+}
+
+function handleTwentyFiveAndFiveBtn() {
+  const twentyFive = 24;
+  handleLimitedBtns(twentyFive);
+}
+
+function handleFiftyAndFiveBtn() {
+  const fifty = 49;
+  handleLimitedBtns(fifty);
 }
 
 function showOptions() {
   optionA.style.display = "none";
   optionB.style.display = "none";
 
-  limitedBtn.addEventListener("click", handleLimitedBtns);
+  twentyAndFiveBtn.addEventListener("click", handleTwentyAndFive);
+  twentyFiveAndFiveBtn.addEventListener("click", handleTwentyFiveAndFiveBtn);
+  fiftyAndFiveBtn.addEventListener("click", handleFiftyAndFiveBtn);
   //   unlimitedBtn.addEventListener("click", handleUnlimitedBtns);
 }
 
