@@ -11,11 +11,37 @@ const fiftyAndFiveBtn = document.querySelector(".fiftyAndFiveBtn");
 //Option A
 let Atime = document.querySelector(".Atime");
 
+function updateRest() {
+  let restMin = 0;
+  let restSeconds = 60;
+
+  setInterval(function () {
+    if (restMin == 0 && restSeconds == 1) {
+      Atime.innerHTML = "00:00";
+    } else {
+      restSeconds--;
+      if (restSeconds == 0) {
+        restMin--;
+        restSeconds = 60;
+
+        if (restMin == 0) {
+          restMin = restMin;
+        }
+      }
+
+      Atime.innerHTML = `${restMin < 10 ? `0${restMin}` : restMin}:${
+        restSeconds < 10 ? `0${restSeconds}` : restSeconds
+      }`;
+    }
+  }, 1000);
+}
+
 function updateCountDown(min) {
   let seconds = 60;
   setInterval(function () {
     if (min == 0 && seconds == 1) {
       Atime.innerHTML = "00:00";
+      updateRest();
     } else {
       seconds--;
       if (seconds == 0) {
@@ -37,12 +63,11 @@ function updateCountDown(min) {
 function handleLimitedBtns(min) {
   timeAndSet.style.display = "none";
   optionA.style.display = "block";
-
   updateCountDown(min);
 }
 
 function handleTwentyAndFive() {
-  const twenty = 19;
+  const twenty = 0;
   handleLimitedBtns(twenty);
 }
 
