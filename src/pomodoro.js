@@ -13,61 +13,76 @@ let Atime = document.querySelector(".Atime");
 
 function updateRest() {
   let restMin = 0;
-  let restSeconds = 60;
+  let restSeconds = 29;
 
-  setInterval(function () {
-    if (restMin == 0 && restSeconds == 1) {
-      Atime.innerHTML = "00:00";
-    } else {
-      restSeconds--;
-      if (restSeconds == 0) {
-        restMin--;
-        restSeconds = 60;
+  Atime.innerHTML = `${restMin}:${restSeconds}`;
 
-        if (restMin == 0) {
-          restMin = restMin;
-        }
+  const restMin_starter = setInterval(restMin_start, 60000);
+  const restSeconds_starter = setInterval(restSeconds_start, 1000);
+
+  function restMin_start() {
+    restMin--;
+    Atime.innerHTML = `${restMin}:${restSeconds}`;
+  }
+
+  function restSeconds_start() {
+    restSeconds--;
+    Atime.innerHTML = `${restMin}:${restSeconds}`;
+
+    if (restSeconds == 0) {
+      if (restMin == 0) {
+        clearInterval(restMin_starter);
+        clearInterval(restSeconds_starter);
       }
-
-      Atime.innerHTML = `${restMin < 10 ? `0${restMin}` : restMin}:${
-        restSeconds < 10 ? `0${restSeconds}` : restSeconds
-      }`;
+      restSeconds = 30;
     }
-  }, 1000);
+  }
 }
 
 function updateCountDown(min) {
-  let seconds = 60;
-  setInterval(function () {
-    if (min == 0 && seconds == 1) {
-      Atime.innerHTML = "00:00";
-      updateRest();
-    } else {
-      seconds--;
-      if (seconds == 0) {
-        min--;
-        seconds = 60;
+  let seconds = 29;
+  console.log(min);
+  let template_min = min - 1;
 
-        if (min == 0) {
-          min = min;
-        }
+  Atime.innerHTML = `${template_min}:${seconds}`;
+
+  //Start countdown
+  const min_starter = setInterval(min_start, 60000);
+  const second_starter = setInterval(second_start, 1000);
+
+  function min_start() {
+    template_min--;
+    Atime.innerHTML = `${template_min}:${seconds}`;
+  }
+
+  function second_start() {
+    seconds--;
+    Atime.innerHTML = `${template_min}:${seconds}`;
+
+    if (seconds == 0) {
+      if (template_min == 0) {
+        console.log("done");
+        clearInterval(min_starter);
+        clearInterval(second_starter);
+
+        updateRest();
       }
-
-      Atime.innerHTML = `${min < 10 ? `0${min}` : min}:${
-        seconds < 10 ? `0${seconds}` : seconds
-      }`;
+      seconds = 60;
     }
-  }, 1000);
+  }
 }
 
 function handleLimitedBtns(min) {
   timeAndSet.style.display = "none";
   optionA.style.display = "block";
-  updateCountDown(min);
+
+  for (let i = 0; i < 4; i++) {
+    updateCountDown(min);
+  }
 }
 
 function handleTwentyAndFive() {
-  const twenty = 0;
+  const twenty = 1;
   handleLimitedBtns(twenty);
 }
 
