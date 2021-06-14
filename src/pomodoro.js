@@ -13,7 +13,8 @@ let Atime = document.querySelector(".Atime");
 
 function updateRest() {
   let restMin = 0;
-  let restSeconds = 29;
+  let restSeconds = 59;
+  console.log("done");
 
   Atime.innerHTML = `${restMin}:${restSeconds}`;
 
@@ -34,13 +35,13 @@ function updateRest() {
         clearInterval(restMin_starter);
         clearInterval(restSeconds_starter);
       }
-      restSeconds = 30;
+      restSeconds = 60;
     }
   }
 }
 
 function updateCountDown(min) {
-  let seconds = 29;
+  let seconds = 59;
   console.log(min);
   let template_min = min - 1;
 
@@ -61,7 +62,6 @@ function updateCountDown(min) {
 
     if (seconds == 0) {
       if (template_min == 0) {
-        console.log("done");
         clearInterval(min_starter);
         clearInterval(second_starter);
 
@@ -76,9 +76,18 @@ function handleLimitedBtns(min) {
   timeAndSet.style.display = "none";
   optionA.style.display = "block";
 
-  for (let i = 0; i < 4; i++) {
+  updateCountDown(min);
+  setintervaltime = min * 60000 + 1 * 60000;
+  let counter = 0;
+
+  let i = setInterval(function () {
     updateCountDown(min);
-  }
+    counter++;
+
+    if (counter == 2) {
+      clearInterval(i);
+    }
+  }, 120000);
 }
 
 function handleTwentyAndFive() {
