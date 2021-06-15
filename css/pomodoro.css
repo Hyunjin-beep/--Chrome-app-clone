@@ -139,6 +139,13 @@ body {
   font-weight: bold;
 }
 
+/* head */
+h3 {
+  font-size: var(--font-size-large);
+  color: var(--color-black);
+  font-weight: lighter;
+}
+
 /* option A */
 .optionA {
   padding: var(--base-size);
