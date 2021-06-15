@@ -17,14 +17,23 @@ function updateRest() {
   let restSeconds = 59;
   console.log("done");
 
-  Atime.innerHTML = `${restMin}:${restSeconds}`;
+  Atime.innerHTML = `${restMin < 10 ? `0${restMin}` : restMin}:${
+    restSeconds < 10 ? `0${restSeconds}` : restSeconds
+  }`;
+
+  const restSpan = document.createElement("span");
+  restSpan.classList.add("restSpan");
+  restSpan.innerHTML = "REST!";
+  optionA.insertBefore(restSpan, Atime);
 
   const restMin_starter = setInterval(restMin_start, 60000);
   const restSeconds_starter = setInterval(restSeconds_start, 1000);
 
   function restMin_start() {
     restMin--;
-    Atime.innerHTML = `${restMin}:${restSeconds}`;
+    Atime.innerHTML = `${restMin < 10 ? `0${restMin}` : restMin}:${
+      restSeconds < 10 ? `0${restSeconds}` : restSeconds
+    }`;
   }
 
   function restSeconds_start() {
@@ -46,7 +55,9 @@ function updateCountDown(min) {
   console.log(min);
   let template_min = min - 1;
 
-  Atime.innerHTML = `${template_min}:${seconds}`;
+  Atime.innerHTML = `${template_min < 10 ? `0${template_min}` : template_min}:${
+    seconds < 10 ? `0${seconds}` : seconds
+  }`;
 
   //Start countdown
   const min_starter = setInterval(min_start, 60000);
@@ -54,12 +65,16 @@ function updateCountDown(min) {
 
   function min_start() {
     template_min--;
-    Atime.innerHTML = `${template_min}:${seconds}`;
+    Atime.innerHTML = `${
+      template_min < 10 ? `0${template_min}` : template_min
+    }:${seconds < 10 ? `0${seconds}` : seconds}`;
   }
 
   function second_start() {
     seconds--;
-    Atime.innerHTML = `${template_min}:${seconds}`;
+    Atime.innerHTML = `${
+      template_min < 10 ? `0${template_min}` : template_min
+    }:${seconds < 10 ? `0${seconds}` : seconds}`;
 
     if (seconds == 0) {
       if (template_min == 0) {
@@ -97,12 +112,12 @@ function handleTwentyAndFive() {
 }
 
 function handleTwentyFiveAndFiveBtn() {
-  const twentyFive = 24;
+  const twentyFive = 25;
   handleLimitedBtns(twentyFive);
 }
 
 function handleFiftyAndFiveBtn() {
-  const fifty = 49;
+  const fifty = 50;
   handleLimitedBtns(fifty);
 }
 
