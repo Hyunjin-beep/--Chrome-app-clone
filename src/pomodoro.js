@@ -1,6 +1,7 @@
 const optionA = document.querySelector(".optionA");
 const optionB = document.querySelector(".optionB");
 const timeAndSet = document.querySelector(".timeSetOptions"); //div
+const setANumber = document.querySelector(".AsetNumber");
 const timeSetUl = document.querySelector(".timeSet-ul"); // ul
 const limitedBtn = document.querySelector(".limited"); // li - limited of timeSetOptions div
 const unlimitedBtn = document.querySelector(".unlimited");
@@ -12,7 +13,7 @@ const fiftyAndFiveBtn = document.querySelector(".fiftyAndFiveBtn");
 let Atime = document.querySelector(".Atime");
 
 function updateRest() {
-  let restMin = 0;
+  let restMin = 4;
   let restSeconds = 59;
   console.log("done");
 
@@ -77,21 +78,21 @@ function handleLimitedBtns(min) {
   optionA.style.display = "block";
 
   updateCountDown(min);
-  setintervaltime = min * 60000 + 1 * 60000;
-  let counter = 0;
+  setintervaltime = min * 60000 + 5 * 60000;
 
+  let counter = 0;
   let i = setInterval(function () {
     updateCountDown(min);
+    setANumber.innerHTML = `${counter + 2}st`;
     counter++;
-
-    if (counter == 2) {
+    if (counter == 3) {
       clearInterval(i);
     }
-  }, 120000);
+  }, setintervaltime);
 }
 
 function handleTwentyAndFive() {
-  const twenty = 1;
+  const twenty = 19;
   handleLimitedBtns(twenty);
 }
 
