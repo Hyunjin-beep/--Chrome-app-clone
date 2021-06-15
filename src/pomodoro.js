@@ -9,6 +9,8 @@ const twentyAndFiveBtn = document.querySelector(".twentyAndFiveBtn");
 const twentyFiveAndFiveBtn = document.querySelector(".twentyFiveAndFiveBtn");
 const fiftyAndFiveBtn = document.querySelector(".fiftyAndFiveBtn");
 
+const h3 = document.querySelector("h3");
+
 //Option A
 let Atime = document.querySelector(".Atime");
 
@@ -89,6 +91,7 @@ function updateCountDown(min) {
 }
 
 function handleLimitedBtns(min) {
+  h3.style.display = "none";
   timeAndSet.style.display = "none";
   optionA.style.display = "block";
 
@@ -107,7 +110,7 @@ function handleLimitedBtns(min) {
 }
 
 function handleTwentyAndFive() {
-  const twenty = 19;
+  const twenty = 20;
   handleLimitedBtns(twenty);
 }
 
