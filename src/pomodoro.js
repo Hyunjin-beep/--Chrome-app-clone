@@ -1,6 +1,7 @@
 const optionA = document.querySelector(".optionA");
 const optionB = document.querySelector(".optionB");
 const timeAndSet = document.querySelector(".timeSetOptions"); //div
+const restSpan = document.querySelector(".restSpan");
 const setANumber = document.querySelector(".AsetNumber");
 const timeSetUl = document.querySelector(".timeSet-ul"); // ul
 const limitedBtn = document.querySelector(".limited"); // li - limited of timeSetOptions div
@@ -11,6 +12,10 @@ const fiftyAndFiveBtn = document.querySelector(".fiftyAndFiveBtn");
 
 const h3 = document.querySelector("h3");
 
+//audio
+const startBell = new Audio("sound/start-bell.wav");
+const restBell = new Audio("sound/rest-bell.mp3");
+
 //Option A
 let Atime = document.querySelector(".Atime");
 
@@ -19,14 +24,12 @@ function updateRest() {
   let restSeconds = 59;
   console.log("done");
 
+  restBell.play();
+  restSpan.style.display = "flex";
+
   Atime.innerHTML = `${restMin < 10 ? `0${restMin}` : restMin}:${
     restSeconds < 10 ? `0${restSeconds}` : restSeconds
   }`;
-
-  const restSpan = document.createElement("span");
-  restSpan.classList.add("restSpan");
-  restSpan.innerHTML = "REST!";
-  optionA.insertBefore(restSpan, Atime);
 
   const restMin_starter = setInterval(restMin_start, 60000);
   const restSeconds_starter = setInterval(restSeconds_start, 1000);
@@ -40,7 +43,9 @@ function updateRest() {
 
   function restSeconds_start() {
     restSeconds--;
-    Atime.innerHTML = `${restMin}:${restSeconds}`;
+    Atime.innerHTML = `${restMin < 10 ? `0${restMin}` : restMin}:${
+      restSeconds < 10 ? `0${restSeconds}` : restSeconds
+    }`;
 
     if (restSeconds == 0) {
       if (restMin == 0) {
@@ -54,8 +59,10 @@ function updateRest() {
 
 function updateCountDown(min) {
   let seconds = 59;
-  console.log(min);
   let template_min = min - 1;
+
+  startBell.play();
+  restSpan.style.display = "none";
 
   Atime.innerHTML = `${template_min < 10 ? `0${template_min}` : template_min}:${
     seconds < 10 ? `0${seconds}` : seconds
