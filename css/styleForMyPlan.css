@@ -272,7 +272,7 @@ body {
   .toDoListSheet {
     width: 90%;
     height: 100vh;
-    margin-top: var(--base-size);
+    margin-top: var(--font-size-larger);
   }
 
   .toDoListSheet .title {
@@ -307,10 +307,5 @@ body {
 
   .trackingSheetForm .tracking-title {
     font-size: calc(var(--font-size-normal) + 3px);
-  }
-
-  .toDoListSheet:hover,
-  .trackingSheetForm:hover {
-    transform: none;
   }
 }
