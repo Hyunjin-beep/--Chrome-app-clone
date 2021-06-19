@@ -262,3 +262,55 @@ body {
 .trackingSheetForm .trackingSheet-ul .trackingForm .inputForTracking:focus {
   outline: none;
 }
+
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toDoListSheet {
+    width: 90%;
+    height: 100vh;
+    margin-top: var(--base-size);
+  }
+
+  .toDoListSheet .title {
+    font-size: calc(var(--font-size-normal) + 3px);
+  }
+
+  .toDoListSheet .date {
+    font-size: var(--font-size-small);
+  }
+
+  .toDoListSheet .toDoList-ul {
+    margin: 0px;
+    height: 70%;
+    font-size: var(--font-size-small);
+  }
+
+  .toDoListSheet .inputForToDo {
+    height: 25%;
+  }
+
+  .toDoListSheet .inputForToDo::placeholder {
+    padding-left: 10px;
+    font-size: 15px;
+    color: var(--color-light-grey);
+  }
+
+  .trackingSheetForm {
+    width: 90%;
+    height: 100vh;
+    margin-top: var(--base-size);
+  }
+
+  .trackingSheetForm .tracking-title {
+    font-size: calc(var(--font-size-normal) + 3px);
+  }
+
+  .toDoListSheet:hover,
+  .trackingSheetForm:hover {
+    transform: none;
+  }
+}

@@ -189,3 +189,9 @@ body {
   top: 10px;
   right: 10px;
 }
+
+@media (max-width: 768px) {
+  .userNameValue {
+    font-size: calc(var(--font-size-small) + 7px);
+  }
+}
