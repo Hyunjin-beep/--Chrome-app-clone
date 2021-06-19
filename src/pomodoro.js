@@ -117,7 +117,7 @@ function handleLimitedBtns(min) {
 }
 
 function handleTwentyAndFive() {
-  const twenty = 20;
+  const twenty = 1;
   handleLimitedBtns(twenty);
 }
 

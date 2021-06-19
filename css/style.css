@@ -65,7 +65,6 @@ body {
   justify-content: center;
   align-items: center;
   margin: var(--base-size);
-  width: 25%;
 }
 
 .userNameInput {
