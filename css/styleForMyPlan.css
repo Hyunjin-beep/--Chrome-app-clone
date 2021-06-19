@@ -308,4 +308,9 @@ body {
   .trackingSheetForm .tracking-title {
     font-size: calc(var(--font-size-normal) + 3px);
   }
+
+  .trackingSheetForm:hover,
+  .toDoListSheet:hover {
+    transform: none;
+  }
 }
