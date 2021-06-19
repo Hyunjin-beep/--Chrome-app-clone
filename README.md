@@ -1,5 +1,5 @@
 # Title: MY BULLET JOURNAL(paperless ver.)
-# URL: https://hyunjin-beep.github.io/--my-bullet-journal/
+### URL: https://hyunjin-beep.github.io/--my-bullet-journal/
 # Languages: HTML, CSS, JavaScript
 
 > ## TABLE OF CONTENTS
