@@ -15,15 +15,15 @@
 
 This project named **MY BULLET JOURNAL** is a digital version of my customized offline bullet journal. 
 Overal, this project has three pages which are welcoming a user, orgazing their schedule & 24 hours, and timer for work & study.
-<img src="https://user-images.githubusercontent.com/64330888/122252847-9e72a900-cf06-11eb-8c46-add22d094c91.png" width="800" height="300"/>            
+<img src="https://user-images.githubusercontent.com/64330888/122252847-9e72a900-cf06-11eb-8c46-add22d094c91.png"/>            
 
 _Welcome User_
 
-<img src="https://user-images.githubusercontent.com/64330888/122252858-a0d50300-cf06-11eb-92c4-91610f973c6c.png" width="800" height="300"/>
+<img src="https://user-images.githubusercontent.com/64330888/122252858-a0d50300-cf06-11eb-92c4-91610f973c6c.png"/>
 
 _Organize schedule & 24hours_
 
-<img src="https://user-images.githubusercontent.com/64330888/122252864-a2063000-cf06-11eb-9424-5a4720a9e922.png" width="800" height="300"/>
+<img src="https://user-images.githubusercontent.com/64330888/122252864-a2063000-cf06-11eb-9424-5a4720a9e922.png"/>
 
 _Timer for work & study_
 
@@ -46,29 +46,29 @@ There are three main pages: welcome user, track todolist and 24hours, and *POMOD
 
 User can use each function using this navigation menu.
 
-<img src="https://user-images.githubusercontent.com/64330888/122632813-2546a200-d110-11eb-886d-a2561f97d817.png" width="800" height="500"/>
+<img src="https://user-images.githubusercontent.com/64330888/122632813-2546a200-d110-11eb-886d-a2561f97d817.png"/>
 
 ---------------------------------------
 
  * Welcome User
 
-  <img src="https://user-images.githubusercontent.com/64330888/122579185-9f831200-d08f-11eb-8f21-46f1440aecd9.png" width="800" height="500"/>
+  <img src="https://user-images.githubusercontent.com/64330888/122579185-9f831200-d08f-11eb-8f21-46f1440aecd9.png"/>
   
-   -Before entering user name-
+   _Before entering user name_
 
-  <img src="https://user-images.githubusercontent.com/64330888/122579178-9e51e500-d08f-11eb-86a6-9451543b1914.png" width="800" height="500"/>
+  <img src="https://user-images.githubusercontent.com/64330888/122579178-9e51e500-d08f-11eb-86a6-9451543b1914.png"/>
 
-   -After entering user name-
+   _After entering user name_
 
    First of all, there is a clock part. I use Date() object to take real time for this part. After getting real time, I set them as proper format such as Hours: Mintues: Seconds - If the number of them are less then 0, I set they need to be displayed including zero(05:02:08). Also, date part as well is worked same.
   
    Second, there is a user name part. User can enter their name via input element and the name will be stored in local storage for remembering it even though the user refresh this page. 
   
-   <img src="https://user-images.githubusercontent.com/64330888/122580881-66e43800-d091-11eb-8839-91172f0d8739.png" width="400" height="800"/>
+   <img src="https://user-images.githubusercontent.com/64330888/122580881-66e43800-d091-11eb-8839-91172f0d8739.png"/>
   
    Third, there is a weather part. When weindow load, it will ask user if it is okay to take their location information by using Geolocation.getCurrentPosition() method. After getting and storing information(latitude & longitude) in local storage in order to remember this information, weather information will be loaded through Weather API and by using fetch().
   
-   <img src="https://user-images.githubusercontent.com/64330888/122632692-84f07d80-d10f-11eb-9477-0b36d07cddf7.png" width="800" height="900"/>
+   <img src="https://user-images.githubusercontent.com/64330888/122632692-84f07d80-d10f-11eb-9477-0b36d07cddf7.png"/>
 
 ---------------------------------------
   
@@ -76,13 +76,13 @@ User can use each function using this navigation menu.
   
   * *To Do List*
 
-  <img src="https://user-images.githubusercontent.com/64330888/122633011-26c49a00-d111-11eb-9b89-6300e58961e6.png" width="800" height="500"/>
+  <img src="https://user-images.githubusercontent.com/64330888/122633011-26c49a00-d111-11eb-9b89-6300e58961e6.png"/>
   
-    -Before adding plan-
+    _Before adding plan_
   
-  <img src="https://user-images.githubusercontent.com/64330888/122633061-77d48e00-d111-11eb-939e-571d9bca22c5.png" width="800" height="500"/>
+  <img src="https://user-images.githubusercontent.com/64330888/122633061-77d48e00-d111-11eb-939e-571d9bca22c5.png"/>
   
-    -After adding plan-
+    _After adding plan_
   
   
    User can add their plan to here. As long as they add plans through input element, those plans are stored in local storage for remembering them.
@@ -102,11 +102,11 @@ User can use each function using this navigation menu.
   
   <img src="https://user-images.githubusercontent.com/64330888/122633186-1f51c080-d112-11eb-9b8b-9dd1c94dd0e9.png"/>
   
-   -Before adding what I did-
+   _Before adding what I did_
     
   <img src="https://user-images.githubusercontent.com/64330888/122633186-1f51c080-d112-11eb-9b8b-9dd1c94dd0e9.png"/>
   
-   -After adding what I did-
+   _After adding what I did_
    
   Next day, user can click a trash button for deleting yesterday trace which will delete all stored traces in local stroage
   
@@ -131,6 +131,12 @@ For example, the user will use 20 min + 5 min break.
 The timer will start with bell sound that alerts starting.
 
 <img src="https://user-images.githubusercontent.com/64330888/122633814-6c836180-d115-11eb-8bd1-729f3905ab5b.png"/>
+
+When a set is done, a timer for break will start with bell sound that alerts break.
+
+<img src="https://user-images.githubusercontent.com/64330888/122634006-99844400-d116-11eb-97ab-9f513ad3d6b1.png"/>
+
+
  
   
   
