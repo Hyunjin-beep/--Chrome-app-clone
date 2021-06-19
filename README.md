@@ -31,10 +31,8 @@ _Timer for work & study_
 
 For several years, I wrote customized bullet journal. It helped me a lot to organize my schedule. 
 However, someday, I thought **what if there is a digital bullet journal that I can customize for convenient**. 
-So I started to think about this project and finally I got a blue print of this project.
-
-(노타보여주기)
-
+Also, I started to take online courses that make a google chrome app for javascript. 
+So I started to think about this project based on these online courses and finally got a blue print of this project.
 
 ## 3. Details of project
 
@@ -135,6 +133,27 @@ The timer will start with bell sound that alerts starting.
 When a set is done, a timer for break will start with bell sound that alerts break.
 
 <img src="https://user-images.githubusercontent.com/64330888/122634006-99844400-d116-11eb-97ab-9f513ad3d6b1.png"/>
+
+Then a new set will start.
+
+<img src="https://user-images.githubusercontent.com/64330888/122634134-74440580-d117-11eb-8ed8-f3b2ee73f686.png"/>
+
+
+## 4. References
+
+Vanila JS Lectures of NomadCoders: https://nomadcoders.co/javascript-for-beginners
+
+MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+Weather API: https://openweathermap.org/api
+
+Other youtube lectures: 
+
+https://youtu.be/a7Kt7S_4HOA
+
+
+
+
 
 
  
